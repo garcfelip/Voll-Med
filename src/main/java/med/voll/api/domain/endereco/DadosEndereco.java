@@ -1,19 +1,19 @@
-package med.voll.api.endereco;
+package med.voll.api.domain.endereco;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 
 public record DadosEndereco(
-        @NotBlank
+        @NotBlank(message = "{logradouro.obrigatorio}")
         String logradouro,
-        @NotBlank
+        @NotBlank(message = "{bairro.obrigatorio}")
         String bairro,
-        @NotBlank
+        @NotBlank(message = "{cep.obrigatorio}")
         @Pattern(regexp = "\\d{8}")
         String cep,
-        @NotBlank
+        @NotBlank(message = "{cidade.obrigatorio}")
         String cidade,
-        @NotBlank
+        @NotBlank(message = "{uf.obrigatorio}")
         String uf,
         String complemento,
         String numero) {
