@@ -54,4 +54,5 @@ public class MedicoController {
         medico.excluir();
         return  ResponseEntity.noContent().build();
     }
+
 }
